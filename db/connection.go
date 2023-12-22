@@ -5,7 +5,6 @@ import (
 	"fmt"
 	_ "github.com/lib/pq" // postgres driver for sql.Open_
 	"github.com/murilogilfelpeto/postgreExample/configs"
-	"log"
 )
 
 func OpenConnection() (*sql.DB, error) {
@@ -27,6 +26,6 @@ func OpenConnection() (*sql.DB, error) {
 func CloseConnection(connection *sql.DB) {
 	err := connection.Close()
 	if err != nil {
-		log.Fatalf("Error closing connection: %v", err)
+		fmt.Println("Error closing connection: %v", err)
 	}
 }
